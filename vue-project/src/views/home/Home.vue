@@ -1,19 +1,28 @@
 <template>
   <div class="home">
-    <h1>这是首页</h1>
+    <mt-button class="begin-btn" @click.native="startEvent" type="primary">开始使用</mt-button>
   </div>
 </template>
 <script>
 export default {
-    name: 'homePage'
+    name: 'homePage',
+    methods:{
+        startEvent(){
+            this.$messagebox('提示', '点击了开始按钮');
+        }
+    }
 };
 
 </script>
 <style lang="less" scoped>
 .home {
-  background: red;
   min-height: 100vh;
   width: 100vw;
+  background-image: url(../../assets/image/home-bg.jpeg);
+  background-size: cover;
 }
-
+.begin-btn{
+    margin-top:15vh;
+    width:70vw;
+}
 </style>
