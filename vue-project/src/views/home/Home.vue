@@ -1,14 +1,22 @@
 <template>
   <div class="home">
     <mt-button class="begin-btn" @click.native="startEvent" type="primary">开始使用</mt-button>
+    <mt-button class="begin-btn" @click.native="startMap" type="primary">查看所在位置</mt-button>
   </div>
 </template>
 <script>
 export default {
     name: 'homePage',
-    methods:{
-        startEvent(){
-            this.$messagebox('提示', '点击了开始按钮');
+    methods: {
+        startEvent() {
+            this.$router.push({
+                name: 'loginPage'
+            });
+        },
+        startMap() {
+            this.$router.push({
+                name: 'maplocation'
+            });
         }
     }
 };
@@ -21,8 +29,10 @@ export default {
   background-image: url(../../assets/image/home-bg.jpeg);
   background-size: cover;
 }
-.begin-btn{
-    margin-top:15vh;
-    width:70vw;
+
+.begin-btn {
+  margin-top: 15vh;
+  width: 70vw;
 }
+
 </style>
